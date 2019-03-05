@@ -1,11 +1,13 @@
 resource "aws_elb" "tfonaws" {
-  name                = "terraform-on-aws-elb"
+  name = "terraform-on-aws-elb"
+
   #availability_zones = ["us-west-2a", "us-west-2b"]
   subnets = ["${aws_subnet.tfonaws.id}"]
+
   listener {
-    lb_port       = 80
-    lb_protocol   = "tcp"
-    instance_port = "${var.server_port}"
+    lb_port           = 80
+    lb_protocol       = "tcp"
+    instance_port     = "${var.server_port}"
     instance_protocol = "tcp"
   }
 

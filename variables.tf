@@ -5,12 +5,10 @@ variable "server_port" {
 
 variable "public_key" {
   description = "public_key on this machine"
-
 }
 
 variable "key_name" {
   description = "SSH Key to remote into instances"
-
 }
 
 variable "vpc_cidr" {

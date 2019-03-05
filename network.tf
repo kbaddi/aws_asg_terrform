@@ -3,7 +3,8 @@ resource "aws_vpc" "tfonaws" {
   instance_tenancy = "default"
 
   tags {
-    name = "tfonaws"
+    key   = "Name"
+    value = "tfonaws"
   }
 }
 
@@ -20,7 +21,7 @@ resource "aws_subnet" "tfonaws" {
   cidr_block = "${var.subnet_cidr}"
 
   tags {
-    name = "Subnet1"
+    Name = "tfonaws"
   }
 }
 
@@ -33,7 +34,7 @@ resource "aws_route_table" "tfonaws_public" {
   }
 
   tags {
-    Name = "Public_Subnet"
+    Name = "tfonaws"
   }
 }
 
